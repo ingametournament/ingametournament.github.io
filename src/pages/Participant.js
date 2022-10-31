@@ -41,6 +41,7 @@ export default function Participant() {
             <h1>{participant.userName}</h1>
             <p>Ранг: {participant.userRank}</p>
             <p>Игры: {participant.userGames?.join(` | `) || `Участник не предоставил список игр.`}</p>
+            <p>Темы: {participant.userTopics?.join(` | `) || `Участник не предоставил список тем.`}</p>
             <BattlesWrapper>
               <p>Батлы:</p>
               {
