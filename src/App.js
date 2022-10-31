@@ -12,7 +12,7 @@ import Battle from './pages/Battle'
 import Participant from './pages/Participant'
 
 import { users, battles } from './objects'
-import { Context } from './pages/Context'
+import { Context } from './pages/functions/Context'
 import { theme } from  './theme'
 
 const GlobalStyle = createGlobalStyle`
@@ -96,9 +96,10 @@ function getPhotoStatus(arr) {
 }
 
 function App() {
+  const root = '';
+
   const sortedBattles = sortBattles(battles);
   const photoStatus = getPhotoStatus(sortedBattles);
-  const root = '/ingame-test';
 
   const [isOpenFlag, setIsOpenFlag] = useState(false);
   const [targetImg, setTargetImg] = useState(null);
@@ -118,7 +119,7 @@ function App() {
 
   return (
     <Router>
-      <Context.Provider value={{battles, sortedBattles, photoStatus, participants: users}}>
+      <Context.Provider value={{battles, sortedBattles, photoStatus, participants: users, root}}>
         <GlobalStyle />
         <ThemeProvider theme={theme}>
           <LightBox onClick={closeLightBox} isOpen={isOpenFlag} targetImg={targetImg} />
@@ -127,7 +128,7 @@ function App() {
             <Main>
               <Routes basename={`${root}/`}>
                 <Route path={`${root}/`} element={<MainPage/>}/>
-                <Route path={`${root}/participants/:id`} element={<Participant participants={users} battles={battles}/>}/>
+                <Route path={`${root}/participants/:id`} element={<Participant />}/>
                 <Route path={`${root}/battles/:id`} element={<Battle battles={battles} onClick={{openLightBox, closeLightBox}}/>}/>
                 <Route exact path={`${root}/battles/`} element={<AllBattles />}/>
                 <Route exact path={`${root}/participants/`} element={<AllParticipant />}/>
