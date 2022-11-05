@@ -5,6 +5,7 @@ export const Context = createContext(
     battles: [],
     sortedBattles: [],
     participants: [],
-    photoStatus: {}
+    photoStatus: {},
+    root: ''
   }
 );
