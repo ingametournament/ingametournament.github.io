@@ -61,9 +61,11 @@ function sortBattles(arr) {
     isOver.push(e);
   }
 
-  hasActiveVote.sort((a, b) => new Date(b.voteExpDate) - new Date(a.voteExpDate));
-  hasActiveBattle.sort((a, b) => new Date(b.battleExpDate) - new Date(a.battleExpDate));
-  isOver.sort((a, b) => (new Date(b.voteExpDate) - new Date(a.voteExpDate)));
+  const getDateDifference = (a, b) => new Date(a) - new Date(b);
+
+  hasActiveVote.sort((a, b) => getDateDifference(a.voteExpDate, b.voteExpDate));
+  hasActiveBattle.sort((a, b) => getDateDifference(a.battleExpDate, b.battleExpDate));
+  isOver.sort((a, b) => getDateDifference(a.voteExpDate, b.voteExpDate));
 
   return hasActiveVote.concat(hasActiveBattle, isOver);
 }
