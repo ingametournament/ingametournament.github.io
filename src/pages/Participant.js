@@ -7,7 +7,7 @@ import decideColor from './functions/decideColor';
 
 const Wrapper = styled.div`
   margin: 1rem;
-  & p,h1 {
+  & p {
     margin: .5rem;
   }
 `;
@@ -25,6 +25,11 @@ const BattleLinkStyled = styled(LinkStyled)`
   background-color: ${props => props.theme.bgcolors[props.bgcolor] || `#e5e5e5`};
 `;
 
+const Name = styled.h2`
+  font-size: 2rem;
+  margin: .5rem;
+`;
+
 export default function Participant() {
   const params = useParams();
 
@@ -38,7 +43,7 @@ export default function Participant() {
 
         return (
           <Wrapper>
-            <h1>{participant.userName}</h1>
+            <Name>{participant.userName}</Name>
             <p>Ранг: {participant.userRank}</p>
             <p>Игры: {participant.userGames?.join(` | `) || `Участник не предоставил список игр.`}</p>
             <p>Темы: {participant.userTopics?.join(` | `) || `Участник не предоставил список тем.`}</p>
