@@ -23,7 +23,7 @@ export default function Battle() {
           <AllBattlesWrapper>
             {
               sortedBattles.length < 1 ?
-                `Батлов не обнаружено` :
+                `Поединков не обнаружено` :
                 sortedBattles.map(e =>
                   <BattleLinkStyled key={e.battleName} to={`${root}/battles/${e.battleName}`} bgcolor={decideColor(e, photoStatus[e.battleName])}>
                     {e.battleName}

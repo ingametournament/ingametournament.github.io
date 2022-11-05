@@ -67,6 +67,30 @@ export const users = [
 ]
 
 export const battles = [
+    {
+    participants: [`Диоген без бочки`, `mitreshell`],
+    game: `Minecraft 1.14.4`,
+    battleExpDate: `2022-11-17 23:59`,
+    battleName: `Диоген без бочки и mitreshell | Minecraft 1.14.4 | Грибная тема`,
+    battleTopic:`Грибная тема`,
+    battleCondition: `без модификаций и постобработки`,
+    folderPath: `./photos/Диоген без бочки и mitreshell Minecraft/`,
+    voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
+    voteExpDate: null,
+   },
+   
+    {
+    participants: [`Uberstein`, `Константин Ремизов`],
+    game: `Mount & Blade II: Bannerlord`,
+    battleExpDate: `2022-11-30 23:59`,
+    battleName: `Uberstein и Константин Ремизов | Mount & Blade II: Bannerlord | История России`,
+    battleTopic:`История России`,
+    battleCondition: `от 7 снимков`,
+    folderPath: `./photos/Uberstein и Константин Ремизов Bannerlord/`,
+    voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
+    voteExpDate: null,
+    },
+
   /*{
     participants: [`ПппппП`, `safluns`],
     game: `Rise of the Argonauts`,

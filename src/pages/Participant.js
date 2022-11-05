@@ -43,7 +43,7 @@ export default function Participant() {
             <p>Игры: {participant.userGames?.join(` | `) || `Участник не предоставил список игр.`}</p>
             <p>Темы: {participant.userTopics?.join(` | `) || `Участник не предоставил список тем.`}</p>
             <BattlesWrapper>
-              <p>Батлы:</p>
+              <p>Поединки:</p>
               {
                 participantBattles.length < 1 ?
                   <p>Участник не принимал участие в поединках.</p> :

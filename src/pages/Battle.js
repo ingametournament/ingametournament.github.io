@@ -122,6 +122,8 @@ export default function Battle(props) {
             <GameTitle>
               {battle.game}
             </GameTitle>
+            <h4>{`Тема: ${battle.battleTopic}`}</h4>
+            <h4>{`Дополнительные условия: ${battle.battleCondition}`}</h4>
             {
               Object.entries(getAllPhotos(battle.participants, battle.folderPath))
                 .map(e =>
