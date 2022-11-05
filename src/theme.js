@@ -1,5 +1,5 @@
 export const theme = {
-  bgcolors: {
+  bgColors: {
     green: `#9bf08c`,
     yellow: `#f0d98c`,
     red: `#f08c8c`,
@@ -7,7 +7,8 @@ export const theme = {
   },
 
   borderColors: {
-    active: `red`,
-    inactive: `green`,
+    hasBattle: `red`,
+    hasNoBattle: `green`,
+    inactive: `#a7a7a7`,
   }
 }

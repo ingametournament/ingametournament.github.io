@@ -11,7 +11,7 @@ const AllParticipantsWrapper = styled.div`
 
 const ParticepantLink = styled(LinkStyled)`
 border: 1px solid;
-  border-color: ${props => props.bordercolor || `black`};
+  border-color: ${props => props.theme.borderColors[props.bgcolor] || props.theme.borderColors.inactive};
 `;
 
 const getNames = (arr) => arr.map(e => e.userName).sort();
@@ -30,13 +30,13 @@ const generateContent = (participants, sortedBattles, root) => {
   return names.length < 1 ?
     `Участников не обнаружено` :
     names.map(e => {
-      let color = `#e5e5e5`;
+      let battleStatus = 'inactive';
 
       if (participants.find(p => p.userName === e).active) {
-        participantsWithActiveBattles.has(e) ? color = `red` : color =  `green`;
+        participantsWithActiveBattles.has(e) ? battleStatus = `hasBattle` : battleStatus =  `hasNoBattle`;
       }
 
-      return <ParticepantLink key={e} bordercolor={color} to={`${root}/participants/${e}`}>{e}</ParticepantLink>
+      return <ParticepantLink key={e} bgcolor={battleStatus} to={`${root}/participants/${e}`}>{e}</ParticepantLink>
     }
     )
 }

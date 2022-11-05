@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const LinkStyled = styled(Link)`
   box-sizing: border-box;
   color: #2b2eed;
-  background-color: ${props => props.theme.bgcolors.gray};
+  background-color: ${props => props.theme.bgColors.gray};
   padding: .5rem;
   margin: .5rem;
   transition: all .25s ease;

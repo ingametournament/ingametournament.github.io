@@ -18,7 +18,7 @@ const ScheduleWrapper = styled.div`
 
 const BattleCard = styled.div`
   box-sizing: border-box;
-  background-color: ${props => props.theme.bgcolors[props.bgcolor] || `white`};
+  background-color: ${props => props.theme.bgColors[props.bgcolor] || `white`};
   border: 1px solid black;
   margin: .2em;
   padding: .15em;

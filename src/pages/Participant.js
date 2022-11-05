@@ -22,7 +22,7 @@ const BattlesWrapper = styled.div`
 `;
 
 const BattleLinkStyled = styled(LinkStyled)`
-  background-color: ${props => props.theme.bgcolors[props.bgcolor] || `#e5e5e5`};
+  background-color: ${props => props.theme.bgColors[props.bgcolor] || `#e5e5e5`};
 `;
 
 const Name = styled.h2`

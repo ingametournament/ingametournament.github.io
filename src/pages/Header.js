@@ -130,8 +130,8 @@ const XButton = styled(HelpButton)`
 `;
 
 const Colored = styled.span`
-  background-color: ${props => props.theme.bgcolors[props.bgcolor] || `transparent`};
-  border: .2rem solid ${props => props.theme.borderColors[props.borderColor] || `transpatent`};
+  background-color: ${props => props.theme.bgColors[props.bgColor] || `transparent`};
+  border: .2rem solid ${props => props.theme.borderColors[props.borderColor] || `transparent`};
   padding: 0 .2rem;
 `;
 
@@ -209,23 +209,26 @@ export default function Header() {
               <StyledH2>Легенда</StyledH2>
               <StyledH3>Поединки</StyledH3>
               <StyledSpan>
-                <Colored bgcolor={`green`}>Зелёный фон</Colored> - все участники сдали работы или началось голосование
+                <Colored bgColor={`green`}>Зелёный фон</Colored> - все участники сдали работы или началось голосование
               </StyledSpan>
               <StyledSpan>
-                <Colored bgcolor={`yellow`}>Жёлтый фон</Colored> - как минимум один участник сдал работы
+                <Colored bgColor={`yellow`}>Жёлтый фон</Colored> - как минимум один участник сдал работы
               </StyledSpan>
               <StyledSpan>
-                <Colored bgcolor={`red`}>Красный фон</Colored> - ни один участник не сдал работы
+                <Colored bgColor={`red`}>Красный фон</Colored> - ни один участник не сдал работы
               </StyledSpan>
               <StyledSpan>
-                <Colored bgcolor={`gray`}>Серый фон</Colored> - голосование окончилось
+                <Colored bgColor={`gray`}>Серый фон</Colored> - голосование окончилось
               </StyledSpan>
               <StyledH3>Участники</StyledH3>
               <StyledSpan>
-                <Colored borderColor={`inactive`}>Зелёная рамка</Colored> - участник не принимает участие в поединке
+                <Colored borderColor={`hasBattle`}>Зелёная рамка</Colored> - участник не принимает участие в поединке
               </StyledSpan>
               <StyledSpan>
-                <Colored borderColor={`active`}>Красная рамка</Colored> - участник принимает участие в поединке
+                <Colored borderColor={`hasNoBattle`}>Красная рамка</Colored> - участник принимает участие в поединке
+              </StyledSpan>
+              <StyledSpan>
+                <Colored borderColor={`inactive`}>Серая рамка</Colored> - участник не принимает заявки на участие в поединке
               </StyledSpan>
               <XButton onClick={togglePopUp}>
                 X
