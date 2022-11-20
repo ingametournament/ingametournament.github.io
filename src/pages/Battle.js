@@ -8,30 +8,27 @@ const BattleWrapper = styled.div`
   margin: 1rem;
   position: relative;
 `
-const Img = styled.img`
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  margin: 1rem;
-
-  cursor: pointer;
-
-  box-sizing: border-box;
-  border: 1px solid black;
+const BattleInfo = styled.div`
+  border-bottom: 1px solid black;
+  padding-bottom: .5rem;
 `;
 
 const GameTitle = styled.h2`
   padding: .5rem;
   padding-left: 0;
-  margin: 0;
   background-color: white;
 `;
 
+const ParticipantDescription = styled.div`
+  margin-top: .5rem;
+  white-space: pre-wrap;
+`;
 
 const LinkStyled = styled(Link)`
   color: #2b2eed;
   transition: all .25s ease;
   text-decoration: underline .1rem transparent;
+  font-weight: bold;
 
   &:hover {
     text-decoration-color: #ff00aa;
@@ -40,6 +37,7 @@ const LinkStyled = styled(Link)`
 
 const LinkAndImgsWrapper = styled.div`
   margin-top: .5rem;
+  padding-bottom: .5rem;
   box-sizing: border-box;
   border-bottom: 1px solid black;
 `;
@@ -53,6 +51,18 @@ const ImgsWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
   }
+`;
+  
+const Img = styled.img`
+  height: 9rem;
+  width: 9rem;
+  object-fit: cover;
+  margin: 1rem;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+  border: 1px solid black;
 `;
 
 const Vote = styled.div`
@@ -119,20 +129,35 @@ export default function Battle(props) {
       {({root}) => {
         return (
           <BattleWrapper onClick={props.onClick.openLightBox}>
-            <GameTitle>
-              {battle.game}
-            </GameTitle>
-            <h4>{`Тема: ${battle.battleTopic}`}</h4>
-            <h4>{`Дополнительные условия: ${battle.battleCondition}`}</h4>
+            <BattleInfo>
+              <GameTitle>
+                {battle.game}
+              </GameTitle>
+              <h4>{`Тема: ${battle.battleTopic || ''}`}</h4>
+              {
+                battle.battleCondition ?
+                  <h4>
+                    {`Дополнительные условия: ${battle.battleCondition}`}
+                  </h4> :
+                  undefined
+              }
+            </BattleInfo>
             {
               Object.entries(getAllPhotos(battle.participants, battle.folderPath))
-                .map(e =>
-                <LinkAndImgsWrapper>
-                  <LinkStyled to={`${root}/participants/${e[0]}`}>{e[0]}</LinkStyled>
-                  <ImgsWrapper>
-                    {[...e[1]]}
-                  </ImgsWrapper>
-                </LinkAndImgsWrapper>
+                .map((e, i) =>
+                  <LinkAndImgsWrapper>
+                    <LinkStyled to={`${root}/participants/${e[0]}`}>
+                      {e[0]}
+                    </LinkStyled>
+                    <ParticipantDescription>
+                      {
+                        battle?.participantDescription?.[i]
+                      }
+                    </ParticipantDescription>
+                    <ImgsWrapper>
+                      {[...e[1]]}
+                    </ImgsWrapper>
+                  </LinkAndImgsWrapper>
                 )
             }
             <Vote id='vote' />

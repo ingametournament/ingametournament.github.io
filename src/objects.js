@@ -1,10 +1,4 @@
 export const users = [
-  /*{
-    active: false,
-    userName: `TEST`,
-    userGames: [],
-    userRank: 3,
-  },*/
   {
     active: true,
     userName: `Егор Черных`,
@@ -62,106 +56,38 @@ export const users = [
     userTopics: [`неловкий момент`, 'комиксы', 'история россии', 'эротика', 'еда', 'сказки народов мира', 'двойники', 'деньги', 'утопии', 'самые уродливые фотографии'],
     userRank: 4,
   },
-  
-  
 ]
 
 export const battles = [
     {
-    participants: [`Диоген без бочки`, `mitreshell`],
-    game: `Minecraft 1.14.4`,
-    battleExpDate: `2022-11-17 23:59`,
-    battleName: `Диоген без бочки и mitreshell | Minecraft 1.14.4 | Грибная тема`,
-    battleTopic:`Грибная тема`,
-    battleCondition: `без модификаций и постобработки`,
-    folderPath: `./photos/Диоген без бочки и mitreshell Minecraft/`,
-    voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
-    voteExpDate: null,
-   },
+      participants: 
+        [
+          `Диоген без бочки`,
+          `mitreshell`,
+        ],
+      participantDescription: 
+        [
+          `Всё начиналось с туманного поля, а закончилось сточной канавой. Грибной коктейль явно оказался лишним\n\n(Для фоток урезал размер изображения, минимизировал прогрузку чанков и напивался случайными зельями до упаду)`,
+        ],
+      game: `Minecraft 1.14.4`,
+      battleExpDate: `2022-11-20 23:59`,
+      battleName: `Диоген без бочки и mitreshell | Minecraft 1.14.4 | Грибная тема`,
+      battleTopic:`Грибная тема`,
+      battleCondition: `без модификаций и постобработки`,
+      folderPath: `./photos/Диоген без бочки и mitreshell Minecraft/`,
+      voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
+      voteExpDate: null,
+    },
    
     {
-    participants: [`Uberstein`, `Константин Ремизов`],
-    game: `Mount & Blade II: Bannerlord`,
-    battleExpDate: `2022-11-30 23:59`,
-    battleName: `Uberstein и Константин Ремизов | Mount & Blade II: Bannerlord | История России`,
-    battleTopic:`История России`,
-    battleCondition: `от 7 снимков`,
-    folderPath: `./photos/Uberstein и Константин Ремизов Bannerlord/`,
-    voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
-    voteExpDate: null,
+      participants: [`Uberstein`, `Константин Ремизов`],
+      game: `Mount & Blade II: Bannerlord`,
+      battleExpDate: `2022-11-30 23:59`,
+      battleName: `Uberstein и Константин Ремизов | Mount & Blade II: Bannerlord | История России`,
+      battleTopic:`История России`,
+      battleCondition: `от 7 снимков`,
+      folderPath: `./photos/Uberstein и Константин Ремизов Bannerlord/`,
+      voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
+      voteExpDate: null,
     },
-
-  /*{
-    participants: [`ПппппП`, `safluns`],
-    game: `Rise of the Argonauts`,
-    battleExpDate: `2022-11-21`,
-    battleName: `ПппппП и safluns | Rise of the Argonauts`,
-    folderPath: `./photos/ПппппП и sufluns Rise of the Argonauts/`,
-    voteEmbed: `<script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="ingameph_polls/6" data-width="100%"></script>`,
-    voteExpDate: null,
-  },
-  {
-    participants: [`Виталик Романченко`, `ПппппП`, `Amaru Viales`],
-    game: `Divinity 2: Developer's Cut`,
-    battleExpDate: `2022-11-12`,
-    battleName: `Amaru Viales, Виталик Романченко и ПппппП | Divinity 2: Developer's Cut`,
-    folderPath: `./photos/Amaru Viales, Виталик Романченко и ПппппП Divinity 2 Developer's Cut/`,
-    voteEmbed: `<script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="ingameph_polls/15" data-width="100%"></script>`,
-    voteExpDate: `2023-11-19`,
-  },
-  {
-    participants: [`Саша Маркина`, `Broken Windows`],
-    game: `Two Worlds II`,
-    battleExpDate: `2023-01-02`,
-    battleName: `Broken Windows и Саша Маркина | Two Worlds II`,
-    folderPath: `./photos/Broken Windows и Саша Маркина Two Worlds II/`,
-    voteEmbed: `<script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="ingameph_polls/14" data-width="100%"></script>`,
-    voteExpDate: null,
-  },
-
-
-
-
-
-
-  {
-    participants: [`Саша Маркина`, `Broken Windows`],
-    game: `Two Worlds II`,
-    battleExpDate: `2021-01-02`,
-    battleName: `4Broken Windows и Саша Маркина | Two Worlds II`,
-    folderPath: `./photos/Broken Windows и Саша Маркина Two Worlds II/`,
-    voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
-    dataTelegram: `ingameph_polls/14`,
-    voteExpDate: `2021-01-17`,
-  },
-  {
-    participants: [`Саша Маркина`, `Broken Windows`],
-    game: `Two Worlds II`,
-    battleExpDate: `2021-01-02`,
-    battleName: `3Broken Windows и Саша Маркина | Two Worlds II`,
-    folderPath: `./photos/Broken Windows и Саша Маркина Two Worlds II/`,
-    voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
-    dataTelegram: `ingameph_polls/14`,
-    voteExpDate: `2021-01-18`,
-  },
-  {
-    participants: [`Саша Маркина`, `Broken Windows`],
-    game: `Two Worlds II`,
-    battleExpDate: `2021-01-02`,
-    battleName: `2Broken Windows и Саша Маркина | Two Worlds II`,
-    folderPath: `./photos/Broken Windows и Саша Маркина Two Worlds II/`,
-    voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
-    dataTelegram: `ingameph_polls/14`,
-    voteExpDate: `2021-01-19`,
-  },
-  {
-    participants: [`Саша Маркина`, `Broken Windows`],
-    game: `Two Worlds II`,
-    battleExpDate: `2021-01-02`,
-    battleName: `1Broken Windows и Саша Маркина | Two Worlds II`,
-    folderPath: `./photos/Broken Windows и Саша Маркина Two Worlds II/`,
-    voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
-    dataTelegram: `ingameph_polls/14`,
-    voteExpDate: `2021-01-20`,
-  },*/
 ]
