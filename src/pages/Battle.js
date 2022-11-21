@@ -7,21 +7,23 @@ import { Context } from './functions/Context';
 const BattleWrapper = styled.div`
   margin: 1rem;
   position: relative;
-`
+`;
+
 const BattleInfo = styled.div`
   border-bottom: 1px solid black;
   padding-bottom: .5rem;
+`;
+
+const Winner = styled.h2`
+  border-bottom: 1px solid black;
+  padding-bottom: .5rem;
+  font-style: italic;
 `;
 
 const GameTitle = styled.h2`
   padding: .5rem;
   padding-left: 0;
   background-color: white;
-`;
-
-const ParticipantDescription = styled.div`
-  margin-top: .5rem;
-  white-space: pre-wrap;
 `;
 
 const LinkStyled = styled(Link)`
@@ -32,6 +34,26 @@ const LinkStyled = styled(Link)`
 
   &:hover {
     text-decoration-color: #ff00aa;
+  }
+`;
+
+const ParticipantDescription = styled.div`
+  margin-top: .5rem;
+  white-space: pre-wrap;
+
+  & a {
+    color: #2b2eed;
+    transition: all .25s ease;
+    text-decoration: underline .1rem transparent;
+    font-weight: bold;
+  
+    &:hover {
+      text-decoration-color: #ff00aa;
+    }
+
+    &:visited {
+      text-decoration: underline .1rem transparent;
+    }
   }
 `;
 
@@ -52,7 +74,7 @@ const ImgsWrapper = styled.div`
     flex-wrap: wrap;
   }
 `;
-  
+
 const Img = styled.img`
   height: 9rem;
   width: 9rem;
@@ -109,6 +131,7 @@ export default function Battle(props) {
 
     let t = document.createElement('div');
     t.innerHTML = battle.voteEmbed;
+
     t = t.firstChild; 
 
     const script = document.createElement('script');
@@ -124,12 +147,24 @@ export default function Battle(props) {
 
   useDocumentTitle(`${params.id} - INGAME`);
 
+  function parseDate(date) {
+    const [year, month, day] = date.split(' ')[0].split('-');
+    return `${day}.${month}.${year}`;
+  }
+
   return (
     <Context.Consumer>
       {({root}) => {
         return (
           <BattleWrapper onClick={props.onClick.openLightBox}>
             <BattleInfo>
+              {
+                battle.winner ?
+                <Winner>
+                  {`Голосование завершилось ${parseDate(battle.voteExpDate)}, победитель: ${battle.winner}`}
+                </Winner> :
+                undefined
+              }
               <GameTitle>
                 {battle.game}
               </GameTitle>
@@ -149,11 +184,7 @@ export default function Battle(props) {
                     <LinkStyled to={`${root}/participants/${e[0]}`}>
                       {e[0]}
                     </LinkStyled>
-                    <ParticipantDescription>
-                      {
-                        battle?.participantDescription?.[i]
-                      }
-                    </ParticipantDescription>
+                    <ParticipantDescription dangerouslySetInnerHTML={{__html: battle?.participantDescription?.[i]}}/>
                     <ImgsWrapper>
                       {[...e[1]]}
                     </ImgsWrapper>
