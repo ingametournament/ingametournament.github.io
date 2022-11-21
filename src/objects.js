@@ -68,15 +68,15 @@ export const battles = [
       participantDescription: 
         [
           `Всё начиналось с туманного поля, а закончилось сточной канавой. Грибной коктейль явно оказался лишним\n\n(Для фоток урезал размер изображения, минимизировал прогрузку чанков и напивался случайными зельями до упаду)`,
-        ],
+`сны в ведьмином доме, на сервере greb\n\n~~~~~~~~\n\n(таинственные рисунки жителей вставлены в игру при помощи техники mapart. есть такой сайт https://mc-map.djfun.de/, который позволяет из загруженного изображения сделать файлы внутриигровых карт. этими файлами нужно заменить файлы оригинальных карт в папке data, и можно складывать из них картинки!)`        ],
       game: `Minecraft 1.14.4`,
-      battleExpDate: `2022-11-20 23:59`,
+      battleExpDate: `2022-11-22 23:59`,
       battleName: `Диоген без бочки и mitreshell | Minecraft 1.14.4 | Грибная тема`,
       battleTopic:`Грибная тема`,
       battleCondition: `без модификаций и постобработки`,
       folderPath: `./photos/Диоген без бочки и mitreshell Minecraft/`,
-      voteEmbed: `https://telegram.org/js/telegram-widget.js?21`,
-      voteExpDate: null,
+      voteEmbed: `<script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="ingameph_polls/40" data-width="100%"></script>`,
+      voteExpDate: `2022-11-29 23:59`,
     },
    
     {
